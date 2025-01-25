@@ -19,7 +19,7 @@ sudo docker run -d --net=host -e POSTGRES_PASSWORD=admin -e POSTGRES_USER=admin 
 ```
 
 See the official
-[duplicati](https://duplicati.readthedocs.io/en/latest/)
+[postgres](https://www.postgresql.org/)
 documentation.
 See also the official
-[installation manual](https://duplicati.readthedocs.io/en/latest/02-installation/).
+[installation manual](https://github.com/docker-library/docs/blob/master/postgres/README.md).
