@@ -16,7 +16,7 @@ provide_container(){
     scp "${dockerfile}" "${user}@${remote}":"~/${dockerfile}"
     ssh -l "${user}" "${remote}" "docker kill \$(docker ps -q --filter ancestor=${image}:${tag})"
     ssh -l "${user}" "${remote}" "docker build -t ${image}:${tag} -f ./${dockerfile} ."
-    ssh -l "${user}" "${remote}" "docker run -d --net=host -e POSTGRES_PASSWORD=admin -e POSTGRES_USER=admin -e POSTGRES_DB=test --restart=unless-stopped ${image}:${tag}"
+    ssh -l "${user}" "${remote}" "docker run -d --net=host -e POSTGRES_PASSWORD=password -e POSTGRES_USER=artifactory -e POSTGRES_DB=artifactorydb --restart=unless-stopped ${image}:${tag}"
     exit 0
 }
 
